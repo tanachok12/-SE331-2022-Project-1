@@ -15,16 +15,15 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Exclude
-    Long id;
-    String category;
+    String id;
+    String patient;
     String title;
-    String description;
+    String surname;
+    String age;
     String location;
-    String date;
-    String time;
     Boolean petAllowed;
     @ManyToOne
-    Organizer organizer;
+    Vaccine vaccine;
     @ManyToMany(mappedBy = "eventHistory")
     List<Participant> participants;
     @ElementCollection

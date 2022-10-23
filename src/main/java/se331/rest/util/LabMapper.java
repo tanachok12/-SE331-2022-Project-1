@@ -19,11 +19,11 @@ public interface LabMapper {
     UserDTO getUserDTO(User user);
     List<EventDTO> getEventDto(List<Event> events);
 
-    OrganizerDTO getOrganizerDTO(Organizer organizer);
+    VaccineDTO getVaccineDTO(Vaccine vaccine);
 
-    List<OrganizerDTO> getOrganizerDTO(List<Organizer> organizers);
+    List<VaccineDTO> getVaccineDTO(List<Vaccine> vaccines);
 
-    @Mapping(target = "authorities", expression = "java(organizer.getUser().getAuthorities().stream().map(auth -> auth.getName().name()).collect(Collectors.toList()))")
-    OrganizerAuthDTO getOrganizerAuthDTO(Organizer organizer);
+    @Mapping(target = "authorities", expression = "java(vaccine.getUser().getAuthorities().stream().map(auth -> auth.getName().name()).collect(Collectors.toList()))")
+    VaccineAuthDTO getVaccineAuthDTO(Vaccine vaccine);
 
 }

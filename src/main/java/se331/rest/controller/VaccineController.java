@@ -4,17 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import se331.rest.service.OrganizerService;
+
+import se331.rest.service.VaccineService;
 import se331.rest.util.LabMapper;
 
 @RestController
-public class OrganizationController {
+public class VaccineController {
     @Autowired
-    OrganizerService organizerService;
+    VaccineService vaccineService;
 
-    @GetMapping("/organizers")
-    ResponseEntity<?> getOrganizers() {
-        return ResponseEntity.ok(LabMapper.INSTANCE.getOrganizerDTO(organizerService.getAllOrganizer()));
+    @GetMapping("/vaccines")
+    ResponseEntity<?> getVaccines() {
+        return ResponseEntity.ok(LabMapper.INSTANCE.getVaccineDTO(vaccineService.getAllVaccine()));
     }
 }
 

@@ -5,21 +5,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class EventDTO {
-    String id;
-    String patient;
-    String title;
-    String surname;
-    String age;
-    String location;
-    Boolean petAllowed;
-    EventOrganizerDTO vaccine;
-    List<String> imageUrls;
+public class VaccineDTO {
+    Long id;
+    String name;
+    List<VaccineOwnEventsDTO> ownEvents = new ArrayList<>();
 }
-

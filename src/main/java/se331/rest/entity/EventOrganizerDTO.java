@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EventOrganizerDTO {
-    Long id;
-    String name;
+    String id;
+    String title;
 }
 

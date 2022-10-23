@@ -4,10 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import se331.rest.entity.dao.EventDao;
-import se331.rest.entity.dao.OrganizerDao;
+import se331.rest.entity.Vaccine;
+import se331.rest.dao.EventDao;
+
 import se331.rest.entity.Event;
-import se331.rest.entity.Organizer;
+
+import se331.rest.dao.VaccineDao;
 
 import javax.transaction.Transactional;
 
@@ -17,7 +19,7 @@ public class EventServiceImpl implements EventService {
     EventDao eventDao;
 
     @Autowired
-    OrganizerDao organizerDao;
+    VaccineDao vaccineDao;
 
     @Override
     public Integer getEventSize() {
@@ -37,9 +39,9 @@ public class EventServiceImpl implements EventService {
     @Override
     @Transactional
     public Event save(Event event) {
-        Organizer organizer = organizerDao.findById(event.getOrganizer().getId()).orElse(null);
-        event.setOrganizer(organizer);
-        organizer.getOwnEvents().add(event);
+        Vaccine vaccine = vaccineDao.findById(event.getVaccine().getId()).orElse(null);
+        event.setVaccine(vaccine);
+        vaccine.getOwnEvents().add(event);
 
         return eventDao.save(event);
     }

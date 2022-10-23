@@ -1,4 +1,4 @@
-package se331.rest.entity.dao;
+package se331.rest.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
@@ -37,6 +37,6 @@ public class EventDaoDbImpl implements EventDao {
 
     @Override
     public Page<Event> getEvents(String name, Pageable page) {
-        return eventRepository.findByTitleIgnoreCaseContainingOrDescriptionIgnoreCaseContainingOrOrganizer_NameIgnoreCaseContaining(name,name,name,page);
+        return eventRepository.findByTitleIgnoreCaseContainingOrDescriptionIgnoreCaseContainingOrVaccine_NameIgnoreCaseContaining(name,name,name,page);
     }
 }
