@@ -15,9 +15,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-import se331.rest.entity.Event;
-import se331.rest.entity.Organizer;
-import se331.rest.repository.OrganizerRepository;
+
+import se331.rest.entity.Vaccine;
+import se331.rest.repository.VaccineRepository;
 import se331.rest.security.entity.Authority;
 import se331.rest.security.entity.AuthorityName;
 import se331.rest.security.entity.JwtUser;
@@ -61,7 +61,7 @@ public class AuthenticationRestController {
     AuthorityRepository authorityRepository;
 
     @Autowired
-    OrganizerRepository organizerRepository;
+    VaccineRepository vaccineRepository;
 
     @PostMapping("${jwt.route.authentication.path}")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtAuthenticationRequest authenticationRequest) throws AuthenticationException {
@@ -81,8 +81,8 @@ public class AuthenticationRestController {
         Map result = new HashMap();
         result.put("token", token);
         User user = userRepository.findById(((JwtUser) userDetails).getId()).orElse(null);
-        if (user.getOrganizer() != null) {
-            result.put("user", LabMapper.INSTANCE.getOrganizerAuthDTO( user.getOrganizer()));
+        if (user.getVaccine() != null) {
+            result.put("user", LabMapper.INSTANCE.getVaccineAuthDTO( user.getVaccine()));
         }
 
         return ResponseEntity.ok(result);
@@ -106,11 +106,11 @@ public class AuthenticationRestController {
         user2.getAuthorities().add(authAdmin);
         userRepository.save(user2);
 
-        Organizer organizer = Organizer.builder().name(user.getUsername()).build();
-        organizerRepository.save(organizer);
+        Vaccine vaccine = Vaccine.builder().title(user.getUsername()).build();
+        vaccineRepository.save(vaccine);
 
-        organizer.setUser(user2);
-        user2.setOrganizer(organizer);
+        vaccine.setUser(user2);
+        user2.setVaccine(vaccine);
 
         userService.save(user2);
         return ResponseEntity.ok(LabMapper.INSTANCE.getUserDTO(user2));

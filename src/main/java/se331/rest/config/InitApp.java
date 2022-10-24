@@ -56,7 +56,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .build());
         vac1.getOwnEvents().add(tempEvent);
         tempEvent = eventRepository.save(Event.builder()
-                .id("1")
+                .id("114")
                 .patient("Midterm Exam")
                 .title("Jadsada")
                 .surname("Kampen")
