@@ -37,7 +37,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
         Organizer org1, org2, org3;
         org1 = organizerRepository.save(Organizer.builder()
-                .name("CAMTT").build());
+                .name("CAMT").build());
         org2 = organizerRepository.save(Organizer.builder()
                 .name("CMU").build());
         org3 = organizerRepository.save(Organizer.builder()
