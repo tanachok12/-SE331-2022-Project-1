@@ -17,7 +17,7 @@ import se331.rest.security.entity.UserDTO;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-27T18:21:01+0700",
+    date = "2022-10-27T19:32:26+0700",
     comments = "version: 1.5.2.Final, compiler: javac, environment: Java 18.0.2 (Amazon.com Inc.)"
 )
 public class LabMapperImpl implements LabMapper {
@@ -36,6 +36,7 @@ public class LabMapperImpl implements LabMapper {
         eventDTO.vaccine1( event.getVaccine1() );
         eventDTO.vaccine2( event.getVaccine2() );
         eventDTO.vaccine3( event.getVaccine3() );
+        eventDTO.age( event.getAge() );
         eventDTO.durationTime1( event.getDurationTime1() );
         eventDTO.durationTime2( event.getDurationTime2() );
         eventDTO.durationTime3( event.getDurationTime3() );
@@ -147,6 +148,7 @@ public class LabMapperImpl implements LabMapper {
         organizerOwnEventsDTO.vaccine1( event.getVaccine1() );
         organizerOwnEventsDTO.vaccine2( event.getVaccine2() );
         organizerOwnEventsDTO.vaccine3( event.getVaccine3() );
+        organizerOwnEventsDTO.age( event.getAge() );
         organizerOwnEventsDTO.durationTime1( event.getDurationTime1() );
         organizerOwnEventsDTO.durationTime2( event.getDurationTime2() );
         organizerOwnEventsDTO.durationTime3( event.getDurationTime3() );

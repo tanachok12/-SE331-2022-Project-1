@@ -53,7 +53,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .durationTime2("6th april 2564")
                 .durationTime3("1st july 2564")
                 .location("NewYork")
-
+                .age("20")
 
 
                 .organizer(org1)
@@ -68,7 +68,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .durationTime1("14th april 2564")
                 .durationTime2("3rd November 2564")
                 .durationTime3(null)
-
+                .age("21")
                 .location("Lumpoon")
 
 
@@ -85,7 +85,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .durationTime1("6th july 2564")
                 .durationTime2(null)
                 .durationTime3(null)
-
+                .age("21")
                 .location("Bankkok")
 
 
@@ -102,7 +102,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
 
                 .location("Chiang Mai ")
 
-
+                .age("32")
 
                 .organizer(org3)
                 .build());
