@@ -27,6 +27,7 @@ public class Event {
     String durationTime1;
     String durationTime2;
     String durationTime3;
+    String addimg;
 
     @ManyToOne
     Organizer organizer;

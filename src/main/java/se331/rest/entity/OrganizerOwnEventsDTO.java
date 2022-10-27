@@ -24,6 +24,7 @@ public class OrganizerOwnEventsDTO {
     String durationTime3;
     String description;
     String location;
+    String addimg;
 
 
     List<Participant> participants;

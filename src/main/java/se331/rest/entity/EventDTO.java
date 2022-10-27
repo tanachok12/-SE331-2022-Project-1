@@ -24,7 +24,7 @@ public class EventDTO {
     String durationTime1;
     String durationTime2;
     String durationTime3;
-
+    String addimg;
 
 
     EventOrganizerDTO organizer;
