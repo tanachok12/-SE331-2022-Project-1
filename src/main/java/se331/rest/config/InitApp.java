@@ -37,53 +37,73 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
         Organizer org1, org2, org3;
         org1 = organizerRepository.save(Organizer.builder()
-                .name("CAMT").build());
+                .name("Dr.Nattaparin").build());
         org2 = organizerRepository.save(Organizer.builder()
-                .name("CMU").build());
+                .name("Dr.F").build());
         org3 = organizerRepository.save(Organizer.builder()
-                .name("ChiangMai").build());
+                .name("Dr.J").build());
         Event tempEvent = null;
         tempEvent = eventRepository.save(Event.builder()
-                .category("Academic")
-                .title("Midterm Exam")
-                .description("A time for taking the exam")
-                .location("CAMT Building")
-                .date("3rd Sept")
-                .time("3.00-4.00 pm.")
-                .petAllowed(false)
+
+                .name("Jesada Kampen")
+                .vaccine1("Sinovac")
+                .vaccine2("Moderna")
+                .vaccine3("Moderna")
+                .durationTime1("3rd january 2564")
+                .durationTime2("6th april 2564")
+                .durationTime3("1st july 2564")
+                .location("NewYork")
+
+
+
                 .organizer(org1)
                 .build());
         org1.getOwnEvents().add(tempEvent);
         tempEvent = eventRepository.save(Event.builder()
-                .category("Academic")
-                .title("Commencement Day")
-                .description("A time for celebration")
-                .location("CMU Convention hall")
-                .date("21th Jan")
-                .time("8.00am-4.00 pm.")
-                .petAllowed(false)
+
+                .name("morty smith")
+                .vaccine1("AstraZeneca")
+                .vaccine2("Moderna")
+                .vaccine3(null)
+                .durationTime1("14th april 2564")
+                .durationTime2("3rd November 2564")
+                .durationTime3(null)
+
+                .location("Lumpoon")
+
+
+
                 .organizer(org1)
                 .build());
         org1.getOwnEvents().add(tempEvent);
         tempEvent = eventRepository.save(Event.builder()
-                .category("Cultural")
-                .title("Loy Krathong")
-                .description("A time for Krathong")
-                .location("Ping River")
-                .date("21th Nov")
-                .time("8.00-10.00 pm.")
+
+                .name("Aranya")
+                .vaccine1("Sinovac")
+                .vaccine2(null)
+                .vaccine3(null)
+                .durationTime1("6th july 2564")
+                .durationTime2(null)
+                .durationTime3(null)
+
+                .location("Bankkok")
+
+
                 .organizer(org2)
-                .petAllowed(false)
+
                 .build());
         org2.getOwnEvents().add(tempEvent);
         tempEvent = eventRepository.save(Event.builder()
-                .category("Cultural")
-                .title("Songkran")
-                .description("Let's Play Water")
-                .location("Chiang Mai Moat")
-                .date("13th April")
-                .time("10.00am - 6.00 pm.")
-                .petAllowed(true)
+
+                .name("Songkran")
+                .vaccine1("Sinovac")
+                .vaccine2("AstraZeneca")
+                .vaccine3(null)
+
+                .location("Chiang Mai ")
+
+
+
                 .organizer(org3)
                 .build());
         org3.getOwnEvents().add(tempEvent);

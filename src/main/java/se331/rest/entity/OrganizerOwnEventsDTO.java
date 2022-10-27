@@ -13,13 +13,18 @@ import java.util.List;
 @AllArgsConstructor
 public class OrganizerOwnEventsDTO {
     Long id;
-    String category;
-    String title;
+
+    String name;
+    String vaccine1;
+    String vaccine2;
+    String vaccine3;
+    String durationTime1;
+    String durationTime2;
+    String durationTime3;
     String description;
     String location;
-    String date;
-    String time;
-    Boolean petAllowed;
+
+
     List<Participant> participants;
 }
 

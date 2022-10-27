@@ -13,13 +13,19 @@ import java.util.List;
 @AllArgsConstructor
 public class EventDTO {
     Long id;
-    String category;
-    String title;
-    String description;
+
+    String name;
+
     String location;
-    String date;
-    String time;
-    Boolean petAllowed;
+    String vaccine1;
+    String vaccine2;
+    String vaccine3;
+    String durationTime1;
+    String durationTime2;
+    String durationTime3;
+
+
+
     EventOrganizerDTO organizer;
     List<String> imageUrls;
 }

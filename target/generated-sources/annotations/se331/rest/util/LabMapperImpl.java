@@ -17,8 +17,8 @@ import se331.rest.security.entity.UserDTO;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-24T20:19:18+0700",
-    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 18.0.2.1 (Oracle Corporation)"
+    date = "2022-10-27T18:21:01+0700",
+    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 18.0.2 (Amazon.com Inc.)"
 )
 public class LabMapperImpl implements LabMapper {
 
@@ -31,13 +31,14 @@ public class LabMapperImpl implements LabMapper {
         EventDTO.EventDTOBuilder eventDTO = EventDTO.builder();
 
         eventDTO.id( event.getId() );
-        eventDTO.category( event.getCategory() );
-        eventDTO.title( event.getTitle() );
-        eventDTO.description( event.getDescription() );
+        eventDTO.name( event.getName() );
         eventDTO.location( event.getLocation() );
-        eventDTO.date( event.getDate() );
-        eventDTO.time( event.getTime() );
-        eventDTO.petAllowed( event.getPetAllowed() );
+        eventDTO.vaccine1( event.getVaccine1() );
+        eventDTO.vaccine2( event.getVaccine2() );
+        eventDTO.vaccine3( event.getVaccine3() );
+        eventDTO.durationTime1( event.getDurationTime1() );
+        eventDTO.durationTime2( event.getDurationTime2() );
+        eventDTO.durationTime3( event.getDurationTime3() );
         eventDTO.organizer( organizerToEventOrganizerDTO( event.getOrganizer() ) );
         List<String> list = event.getImageUrls();
         if ( list != null ) {
@@ -142,13 +143,14 @@ public class LabMapperImpl implements LabMapper {
         OrganizerOwnEventsDTO.OrganizerOwnEventsDTOBuilder organizerOwnEventsDTO = OrganizerOwnEventsDTO.builder();
 
         organizerOwnEventsDTO.id( event.getId() );
-        organizerOwnEventsDTO.category( event.getCategory() );
-        organizerOwnEventsDTO.title( event.getTitle() );
-        organizerOwnEventsDTO.description( event.getDescription() );
+        organizerOwnEventsDTO.name( event.getName() );
+        organizerOwnEventsDTO.vaccine1( event.getVaccine1() );
+        organizerOwnEventsDTO.vaccine2( event.getVaccine2() );
+        organizerOwnEventsDTO.vaccine3( event.getVaccine3() );
+        organizerOwnEventsDTO.durationTime1( event.getDurationTime1() );
+        organizerOwnEventsDTO.durationTime2( event.getDurationTime2() );
+        organizerOwnEventsDTO.durationTime3( event.getDurationTime3() );
         organizerOwnEventsDTO.location( event.getLocation() );
-        organizerOwnEventsDTO.date( event.getDate() );
-        organizerOwnEventsDTO.time( event.getTime() );
-        organizerOwnEventsDTO.petAllowed( event.getPetAllowed() );
         List<Participant> list = event.getParticipants();
         if ( list != null ) {
             organizerOwnEventsDTO.participants( new ArrayList<Participant>( list ) );

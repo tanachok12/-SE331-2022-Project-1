@@ -9,9 +9,9 @@ import java.util.List;
 
 public interface EventRepository extends JpaRepository<Event,Long> {
     List<Event> findAll();
-    Page<Event> findByTitle(String title, Pageable pageRequest);
-    Page<Event> findByTitleContaining(String title, Pageable pageRequest);
-    Page<Event> findByTitleContainingOrDescriptionContaining(String title, String description, Pageable pageRequest);
-    Page<Event> findByTitleContainingOrDescriptionContainingOrOrganizer_NameContaining(String title, String description, String organizerName, Pageable pageRequest);
-    Page<Event> findByTitleIgnoreCaseContainingOrDescriptionIgnoreCaseContainingOrOrganizer_NameIgnoreCaseContaining(String title, String description, String organizerName, Pageable pageRequest);
+    Page<Event> findByName(String name, Pageable pageRequest);
+    Page<Event> findByNameContaining(String name, Pageable pageRequest);
+
+    Page<Event> findByNameContainingOrOrganizer_NameContaining(String name, String description, String organizerName, Pageable pageRequest);
+    Page<Event> findByNameIgnoreCaseContainingOrOrganizer_NameIgnoreCaseContaining(String name, String organizerName, Pageable pageRequest);
 }
