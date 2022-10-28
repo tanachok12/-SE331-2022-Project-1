@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.annotation.processing.Generated;
+import se331.rest.entity.Comment;
+import se331.rest.entity.CommentDTO;
 import se331.rest.entity.Event;
 import se331.rest.entity.EventDTO;
 import se331.rest.entity.EventOrganizerDTO;
@@ -17,7 +19,7 @@ import se331.rest.security.entity.UserDTO;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-27T19:32:26+0700",
+    date = "2022-10-28T23:47:18+0700",
     comments = "version: 1.5.2.Final, compiler: javac, environment: Java 18.0.2 (Amazon.com Inc.)"
 )
 public class LabMapperImpl implements LabMapper {
@@ -40,11 +42,13 @@ public class LabMapperImpl implements LabMapper {
         eventDTO.durationTime1( event.getDurationTime1() );
         eventDTO.durationTime2( event.getDurationTime2() );
         eventDTO.durationTime3( event.getDurationTime3() );
+        eventDTO.addimg( event.getAddimg() );
         eventDTO.organizer( organizerToEventOrganizerDTO( event.getOrganizer() ) );
         List<String> list = event.getImageUrls();
         if ( list != null ) {
             eventDTO.imageUrls( new ArrayList<String>( list ) );
         }
+        eventDTO.commentList( getCommentDto( event.getCommentList() ) );
 
         return eventDTO.build();
     }
@@ -62,6 +66,35 @@ public class LabMapperImpl implements LabMapper {
         userDTO.password( user.getPassword() );
 
         return userDTO.build();
+    }
+
+    @Override
+    public CommentDTO getCommentDto(Comment comment) {
+        if ( comment == null ) {
+            return null;
+        }
+
+        CommentDTO.CommentDTOBuilder commentDTO = CommentDTO.builder();
+
+        commentDTO.id( comment.getId() );
+        commentDTO.name( comment.getName() );
+        commentDTO.comment( comment.getComment() );
+
+        return commentDTO.build();
+    }
+
+    @Override
+    public List<CommentDTO> getCommentDto(List<Comment> comments) {
+        if ( comments == null ) {
+            return null;
+        }
+
+        List<CommentDTO> list = new ArrayList<CommentDTO>( comments.size() );
+        for ( Comment comment : comments ) {
+            list.add( getCommentDto( comment ) );
+        }
+
+        return list;
     }
 
     @Override
@@ -153,6 +186,7 @@ public class LabMapperImpl implements LabMapper {
         organizerOwnEventsDTO.durationTime2( event.getDurationTime2() );
         organizerOwnEventsDTO.durationTime3( event.getDurationTime3() );
         organizerOwnEventsDTO.location( event.getLocation() );
+        organizerOwnEventsDTO.addimg( event.getAddimg() );
         List<Participant> list = event.getParticipants();
         if ( list != null ) {
             organizerOwnEventsDTO.participants( new ArrayList<Participant>( list ) );

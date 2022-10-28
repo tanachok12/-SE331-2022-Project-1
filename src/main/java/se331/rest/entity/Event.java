@@ -4,6 +4,7 @@ package se331.rest.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -28,6 +29,9 @@ public class Event {
     String durationTime2;
     String durationTime3;
     String addimg;
+    @OneToMany
+    @Builder.Default
+    List<Comment> commentList= new ArrayList<>();
 
     @ManyToOne
     Organizer organizer;

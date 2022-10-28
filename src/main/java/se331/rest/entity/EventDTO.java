@@ -29,5 +29,7 @@ public class EventDTO {
 
     EventOrganizerDTO organizer;
     List<String> imageUrls;
+    List<CommentDTO> commentList;
+
 }
 

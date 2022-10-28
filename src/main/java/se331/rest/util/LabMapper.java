@@ -6,6 +6,8 @@ import org.mapstruct.factory.Mappers;
 import se331.rest.entity.*;
 import se331.rest.security.entity.User;
 import se331.rest.security.entity.UserDTO;
+import se331.rest.entity.CommentDTO;
+import se331.rest.entity.Comment;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,6 +19,8 @@ public interface LabMapper {
     EventDTO getEventDto(Event event);
 
     UserDTO getUserDTO(User user);
+    CommentDTO getCommentDto(Comment comment);
+    List<CommentDTO> getCommentDto(List<Comment> comments);
     List<EventDTO> getEventDto(List<Event> events);
 
     OrganizerDTO getOrganizerDTO(Organizer organizer);
