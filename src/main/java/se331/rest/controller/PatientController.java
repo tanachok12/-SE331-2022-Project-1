@@ -20,7 +20,7 @@ public class PatientController {
     @Autowired
     PatientService patientService;
 
-    @GetMapping("event")
+    @GetMapping("patient")
     public ResponseEntity<?> getEventLists(@RequestParam(value = "_limit", required = false) Integer perPage
             , @RequestParam(value = "_page", required = false) Integer page
             , @RequestParam(value = "title", required = false) String title) {
@@ -40,7 +40,7 @@ public class PatientController {
 
     }
 
-    @GetMapping("event/{id}")
+    @GetMapping("patient/{id}")
     public ResponseEntity<?> getEvent(@PathVariable("id") Long id) {
         Patient output = patientService.getEvent(id);
         if (output != null) {
@@ -50,7 +50,7 @@ public class PatientController {
         }
     }
 
-    @PostMapping("/event")
+    @PostMapping("/patient")
     public ResponseEntity<?> addEvent(@RequestBody Patient patient) {
         Patient output = patientService.save(patient);
         return ResponseEntity.ok(LabMapper.INSTANCE.getEventDto(output));
