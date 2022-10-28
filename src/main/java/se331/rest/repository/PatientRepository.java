@@ -7,7 +7,7 @@ import se331.rest.entity.Patient;
 
 import java.util.List;
 
-public interface EventRepository extends JpaRepository<Patient,Long> {
+public interface PatientRepository extends JpaRepository<Patient,Long> {
     List<Patient> findAll();
     Page<Patient> findByName(String name, Pageable pageRequest);
     Page<Patient> findByNameContaining(String name, Pageable pageRequest);

@@ -14,10 +14,10 @@ import java.util.stream.Collectors;
 public interface LabMapper {
     LabMapper INSTANCE = Mappers.getMapper(LabMapper.class);
 
-    EventDTO getEventDto(Patient patient);
+    PatientDTO getEventDto(Patient patient);
 
     UserDTO getUserDTO(User user);
-    List<EventDTO> getEventDto(List<Patient> patients);
+    List<PatientDTO> getEventDto(List<Patient> patients);
 
     OrganizerDTO getOrganizerDTO(Organizer organizer);
 

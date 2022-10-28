@@ -11,7 +11,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class EventDTO {
+public class PatientDTO {
     Long id;
 
     String name;

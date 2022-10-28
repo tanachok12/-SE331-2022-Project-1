@@ -8,7 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import se331.rest.entity.Patient;
 import se331.rest.entity.Organizer;
-import se331.rest.repository.EventRepository;
+import se331.rest.repository.PatientRepository;
 import se331.rest.repository.OrganizerRepository;
 import se331.rest.security.entity.Authority;
 import se331.rest.security.entity.AuthorityName;
@@ -24,7 +24,7 @@ import java.util.Date;
 @Component
 public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     @Autowired
-    EventRepository eventRepository;
+    PatientRepository patientRepository;
 
     @Autowired
     OrganizerRepository organizerRepository;
@@ -43,7 +43,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         org3 = organizerRepository.save(Organizer.builder()
                 .name("Dr.J").build());
         Patient tempPatient = null;
-        tempPatient = eventRepository.save(Patient.builder()
+        tempPatient = patientRepository.save(Patient.builder()
 
                 .name("Jesada Kampen")
                 .vaccine1("Sinovac")
@@ -59,7 +59,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .organizer(org1)
                 .build());
         org1.getOwnPatients().add(tempPatient);
-        tempPatient = eventRepository.save(Patient.builder()
+        tempPatient = patientRepository.save(Patient.builder()
 
                 .name("morty smith")
                 .vaccine1("AstraZeneca")
@@ -77,7 +77,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .organizer(org1)
                 .build());
         org1.getOwnPatients().add(tempPatient);
-        tempPatient = eventRepository.save(Patient.builder()
+        tempPatient = patientRepository.save(Patient.builder()
 
                 .name("Aranya")
                 .vaccine1("Sinovac")
@@ -94,7 +94,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
 
                 .build());
         org2.getOwnPatients().add(tempPatient);
-        tempPatient = eventRepository.save(Patient.builder()
+        tempPatient = patientRepository.save(Patient.builder()
 
                 .name("Songkran")
                 .vaccine1("Sinovac")

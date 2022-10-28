@@ -10,15 +10,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import se331.rest.entity.Patient;
-import se331.rest.service.EventService;
+import se331.rest.service.PatientService;
 import se331.rest.util.LabMapper;
 
 @Controller
-public class EventController {
+public class PatientController {
 
 
     @Autowired
-    EventService eventService;
+    PatientService patientService;
 
     @GetMapping("event")
     public ResponseEntity<?> getEventLists(@RequestParam(value = "_limit", required = false) Integer perPage
@@ -28,9 +28,9 @@ public class EventController {
         page = page == null ? 1 : page;
         Page<Patient> pageOutput;
         if (title == null) {
-            pageOutput = eventService.getEvents(perPage, page);
+            pageOutput = patientService.getEvents(perPage, page);
         } else {
-            pageOutput = eventService.getEvents(title, PageRequest.of(page - 1, perPage));
+            pageOutput = patientService.getEvents(title, PageRequest.of(page - 1, perPage));
         }
         HttpHeaders responseHeader = new HttpHeaders();
 
@@ -42,7 +42,7 @@ public class EventController {
 
     @GetMapping("event/{id}")
     public ResponseEntity<?> getEvent(@PathVariable("id") Long id) {
-        Patient output = eventService.getEvent(id);
+        Patient output = patientService.getEvent(id);
         if (output != null) {
             return ResponseEntity.ok(LabMapper.INSTANCE.getEventDto(output));
         } else {
@@ -52,7 +52,7 @@ public class EventController {
 
     @PostMapping("/event")
     public ResponseEntity<?> addEvent(@RequestBody Patient patient) {
-        Patient output = eventService.save(patient);
+        Patient output = patientService.save(patient);
         return ResponseEntity.ok(LabMapper.INSTANCE.getEventDto(output));
     }
 

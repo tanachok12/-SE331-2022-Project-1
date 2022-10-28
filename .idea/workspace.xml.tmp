@@ -5,33 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfdaabcd-1752-4361-95b0-98d11f16f6f0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml.tmp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/config/InitApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/config/InitApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/controller/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/entity/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/entity/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/entity/Organizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/entity/Organizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/entity/Participant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/entity/Participant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/entity/dao/EventDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/entity/dao/EventDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/controller/PatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/entity/EventDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/entity/PatientDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/entity/dao/EventDaoDbImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/entity/dao/EventDaoDbImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/repository/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/repository/EventRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/security/controller/AuthenticationRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/security/controller/AuthenticationRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/security/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/security/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/security/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/security/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/service/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/service/EventServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/service/EventServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/repository/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/repository/PatientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/service/PatientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/service/EventServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/service/PatientServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/se331/rest/util/LabMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/se331/rest/util/LabMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/config/InitApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se331/rest/config/InitApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/controller/EventController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se331/rest/controller/EventController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/entity/Organizer$OrganizerBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se331/rest/entity/Organizer$OrganizerBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/entity/Organizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se331/rest/entity/Organizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/entity/Participant$ParticipantBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se331/rest/entity/Participant$ParticipantBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/entity/Participant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se331/rest/entity/Participant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/entity/dao/EventDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se331/rest/entity/dao/EventDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/entity/dao/EventDaoDbImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se331/rest/entity/dao/EventDaoDbImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/repository/EventRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se331/rest/repository/EventRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/security/controller/AuthenticationRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se331/rest/security/controller/AuthenticationRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/service/EventService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se331/rest/service/EventService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/service/EventServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se331/rest/service/EventServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/entity/EventDTO$EventDTOBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/entity/EventDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/repository/EventRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/service/EventService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/service/EventServiceImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/util/LabMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se331/rest/util/LabMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/se331/rest/util/LabMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/se331/rest/util/LabMapperImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/se331/rest/util/LabMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/se331/rest/util/LabMapperImpl.java" afterDir="false" />
@@ -105,7 +93,7 @@
       <workItem from="1666952351956" duration="139000" />
       <workItem from="1666952586135" duration="707000" />
       <workItem from="1666953371305" duration="1735000" />
-      <workItem from="1666955171245" duration="331000" />
+      <workItem from="1666955171245" duration="1521000" />
     </task>
     <servers />
   </component>

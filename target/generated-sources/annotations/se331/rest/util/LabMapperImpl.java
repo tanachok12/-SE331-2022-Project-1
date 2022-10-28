@@ -4,48 +4,48 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.annotation.processing.Generated;
-import se331.rest.entity.EventDTO;
 import se331.rest.entity.EventOrganizerDTO;
 import se331.rest.entity.Organizer;
 import se331.rest.entity.OrganizerAuthDTO;
 import se331.rest.entity.OrganizerDTO;
 import se331.rest.entity.Patient;
+import se331.rest.entity.PatientDTO;
 import se331.rest.security.entity.User;
 import se331.rest.security.entity.UserDTO;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-28T18:11:57+0700",
+    date = "2022-10-28T18:35:48+0700",
     comments = "version: 1.5.2.Final, compiler: javac, environment: Java 18.0.2 (Amazon.com Inc.)"
 )
 public class LabMapperImpl implements LabMapper {
 
     @Override
-    public EventDTO getEventDto(Patient patient) {
+    public PatientDTO getEventDto(Patient patient) {
         if ( patient == null ) {
             return null;
         }
 
-        EventDTO.EventDTOBuilder eventDTO = EventDTO.builder();
+        PatientDTO.PatientDTOBuilder patientDTO = PatientDTO.builder();
 
-        eventDTO.id( patient.getId() );
-        eventDTO.name( patient.getName() );
-        eventDTO.location( patient.getLocation() );
-        eventDTO.vaccine1( patient.getVaccine1() );
-        eventDTO.vaccine2( patient.getVaccine2() );
-        eventDTO.vaccine3( patient.getVaccine3() );
-        eventDTO.age( patient.getAge() );
-        eventDTO.durationTime1( patient.getDurationTime1() );
-        eventDTO.durationTime2( patient.getDurationTime2() );
-        eventDTO.durationTime3( patient.getDurationTime3() );
-        eventDTO.addimg( patient.getAddimg() );
-        eventDTO.organizer( organizerToEventOrganizerDTO( patient.getOrganizer() ) );
+        patientDTO.id( patient.getId() );
+        patientDTO.name( patient.getName() );
+        patientDTO.location( patient.getLocation() );
+        patientDTO.vaccine1( patient.getVaccine1() );
+        patientDTO.vaccine2( patient.getVaccine2() );
+        patientDTO.vaccine3( patient.getVaccine3() );
+        patientDTO.age( patient.getAge() );
+        patientDTO.durationTime1( patient.getDurationTime1() );
+        patientDTO.durationTime2( patient.getDurationTime2() );
+        patientDTO.durationTime3( patient.getDurationTime3() );
+        patientDTO.addimg( patient.getAddimg() );
+        patientDTO.organizer( organizerToEventOrganizerDTO( patient.getOrganizer() ) );
         List<String> list = patient.getImageUrls();
         if ( list != null ) {
-            eventDTO.imageUrls( new ArrayList<String>( list ) );
+            patientDTO.imageUrls( new ArrayList<String>( list ) );
         }
 
-        return eventDTO.build();
+        return patientDTO.build();
     }
 
     @Override
@@ -64,12 +64,12 @@ public class LabMapperImpl implements LabMapper {
     }
 
     @Override
-    public List<EventDTO> getEventDto(List<Patient> patients) {
+    public List<PatientDTO> getEventDto(List<Patient> patients) {
         if ( patients == null ) {
             return null;
         }
 
-        List<EventDTO> list = new ArrayList<EventDTO>( patients.size() );
+        List<PatientDTO> list = new ArrayList<PatientDTO>( patients.size() );
         for ( Patient patient : patients ) {
             list.add( getEventDto( patient ) );
         }

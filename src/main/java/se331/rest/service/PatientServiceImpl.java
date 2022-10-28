@@ -12,7 +12,7 @@ import se331.rest.entity.Organizer;
 import javax.transaction.Transactional;
 
 @Service
-public class EventServiceImpl implements EventService {
+public class PatientServiceImpl implements PatientService {
     @Autowired
     EventDao eventDao;
 
