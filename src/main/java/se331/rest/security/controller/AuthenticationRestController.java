@@ -15,7 +15,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-import se331.rest.entity.Event;
 import se331.rest.entity.Organizer;
 import se331.rest.repository.OrganizerRepository;
 import se331.rest.security.entity.Authority;

@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import se331.rest.entity.Event;
+import se331.rest.entity.Patient;
 import se331.rest.service.EventService;
 import se331.rest.util.LabMapper;
 
@@ -26,7 +26,7 @@ public class EventController {
             , @RequestParam(value = "title", required = false) String title) {
         perPage = perPage == null ? 3 : perPage;
         page = page == null ? 1 : page;
-        Page<Event> pageOutput;
+        Page<Patient> pageOutput;
         if (title == null) {
             pageOutput = eventService.getEvents(perPage, page);
         } else {
@@ -42,7 +42,7 @@ public class EventController {
 
     @GetMapping("event/{id}")
     public ResponseEntity<?> getEvent(@PathVariable("id") Long id) {
-        Event output = eventService.getEvent(id);
+        Patient output = eventService.getEvent(id);
         if (output != null) {
             return ResponseEntity.ok(LabMapper.INSTANCE.getEventDto(output));
         } else {
@@ -51,8 +51,8 @@ public class EventController {
     }
 
     @PostMapping("/event")
-    public ResponseEntity<?> addEvent(@RequestBody Event event) {
-        Event output = eventService.save(event);
+    public ResponseEntity<?> addEvent(@RequestBody Patient patient) {
+        Patient output = eventService.save(patient);
         return ResponseEntity.ok(LabMapper.INSTANCE.getEventDto(output));
     }
 

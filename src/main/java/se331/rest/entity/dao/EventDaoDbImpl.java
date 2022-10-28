@@ -6,7 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
-import se331.rest.entity.Event;
+import se331.rest.entity.Patient;
 import se331.rest.repository.EventRepository;
 
 @Profile("db")
@@ -21,22 +21,22 @@ public class EventDaoDbImpl implements EventDao {
     }
 
     @Override
-    public Page<Event> getEvents(Integer pageSize, Integer page) {
+    public Page<Patient> getEvents(Integer pageSize, Integer page) {
         return eventRepository.findAll(PageRequest.of(page-1,pageSize));
     }
 
     @Override
-    public Event getEvents(Long id) {
+    public Patient getEvents(Long id) {
         return eventRepository.findById(id).orElse(null);
     }
 
     @Override
-    public Event save(Event event) {
-        return eventRepository.save(event);
+    public Patient save(Patient patient) {
+        return eventRepository.save(patient);
     }
 
     @Override
-    public Page<Event> getEvents(String name, Pageable page) {
+    public Page<Patient> getEvents(String name, Pageable page) {
         return eventRepository.findByNameIgnoreCaseContainingOrOrganizer_NameIgnoreCaseContaining(name,name,page);
     }
 }

@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import se331.rest.entity.Patient;
 import se331.rest.entity.dao.EventDao;
 import se331.rest.entity.dao.OrganizerDao;
-import se331.rest.entity.Event;
 import se331.rest.entity.Organizer;
 
 import javax.transaction.Transactional;
@@ -25,27 +25,27 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public Page<Event> getEvents(Integer pageSize, Integer page) {
+    public Page<Patient> getEvents(Integer pageSize, Integer page) {
         return eventDao.getEvents(pageSize, page);
     }
 
     @Override
-    public Event getEvent(Long id) {
+    public Patient getEvent(Long id) {
         return eventDao.getEvents(id);
     }
 
     @Override
     @Transactional
-    public Event save(Event event) {
-        Organizer organizer = organizerDao.findById(event.getOrganizer().getId()).orElse(null);
-        event.setOrganizer(organizer);
-        organizer.getOwnEvents().add(event);
+    public Patient save(Patient patient) {
+        Organizer organizer = organizerDao.findById(patient.getOrganizer().getId()).orElse(null);
+        patient.setOrganizer(organizer);
+        organizer.getOwnPatients().add(patient);
 
-        return eventDao.save(event);
+        return eventDao.save(patient);
     }
 
     @Override
-    public Page<Event> getEvents(String title, Pageable pageable) {
+    public Page<Patient> getEvents(String title, Pageable pageable) {
         return eventDao.getEvents(title,pageable);
     }
 }

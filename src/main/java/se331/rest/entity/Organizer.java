@@ -21,7 +21,7 @@ public class Organizer {
     @OneToMany(mappedBy = "organizer")
 
     @Builder.Default
-    List<Event> ownEvents = new ArrayList<>();
+    List<Patient> ownPatients = new ArrayList<>();
     @OneToOne
     User user;
 }

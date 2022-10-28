@@ -2,14 +2,14 @@ package se331.rest.entity.dao;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import se331.rest.entity.Event;
+import se331.rest.entity.Patient;
 
 public interface EventDao {
     Integer getEventSize();
-    Page<Event> getEvents(Integer pageSize, Integer page);
-    Event getEvents(Long id);
+    Page<Patient> getEvents(Integer pageSize, Integer page);
+    Patient getEvents(Long id);
 
-    Event save(Event event);
-    Page<Event> getEvents(String name, Pageable page);
+    Patient save(Patient patient);
+    Page<Patient> getEvents(String name, Pageable page);
 }
 
