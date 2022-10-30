@@ -21,8 +21,8 @@ import se331.rest.security.entity.UserDTO;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-31T00:14:29+0700",
-    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 18.0.2 (Amazon.com Inc.)"
+    date = "2022-10-31T01:10:54+0700",
+    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 18.0.2.1 (Oracle Corporation)"
 )
 public class LabMapperImpl implements LabMapper {
 
@@ -128,14 +128,14 @@ public class LabMapperImpl implements LabMapper {
     }
 
     @Override
-    public List<VaccineDTO> getVaccineDto(List<Vaccine> event) {
-        if ( event == null ) {
+    public List<VaccineDTO> getVaccineDto(List<Vaccine> vaccine) {
+        if ( vaccine == null ) {
             return null;
         }
 
-        List<VaccineDTO> list = new ArrayList<VaccineDTO>( event.size() );
-        for ( Vaccine vaccine : event ) {
-            list.add( getVaccineDto( vaccine ) );
+        List<VaccineDTO> list = new ArrayList<VaccineDTO>( vaccine.size() );
+        for ( Vaccine vaccine1 : vaccine ) {
+            list.add( getVaccineDto( vaccine1 ) );
         }
 
         return list;

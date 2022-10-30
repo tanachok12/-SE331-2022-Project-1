@@ -23,7 +23,7 @@ public interface LabMapper {
     CommentDTO getCommentDto(Comment comment);
     List<CommentDTO> getCommentDto(List<Comment> comments);
     List<EventDTO> getEventDto(List<Event> events);
-    List<VaccineDTO> getVaccineDto(List<Vaccine> event);
+    List<VaccineDTO> getVaccineDto(List<Vaccine> vaccine);
 
     OrganizerDTO getOrganizerDTO(Organizer organizer);
 
