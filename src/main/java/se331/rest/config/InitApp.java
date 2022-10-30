@@ -163,6 +163,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         Authority authUser = Authority.builder().name(AuthorityName.ROLE_USER).build();
       Authority authAdmin = Authority.builder().name(AuthorityName.ROLE_ADMIN).build();
+      Authority authDoctor = Authority.builder().name(AuthorityName.ROLE_DOCTOR).build();
         user1 = User.builder()
                 .username("admin")
                 .password(encoder.encode("admin"))
@@ -185,21 +186,22 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                         .atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();
         user3 = User.builder()
-                .username("disableUser")
-                .password(encoder.encode("disableUser"))
-                .firstname("disableUser")
-                .lastname("disableUser")
-                .email("disableUser@user.com")
+                .username("doctor")
+                .password(encoder.encode("doctor"))
+                .firstname("doctor")
+                .lastname("doctor")
+                .email("doctor@user.com")
                 .enabled(false)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021,01,01)
                         .atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();
         authorityRepository.save(authUser);
         authorityRepository.save(authAdmin);
+        authorityRepository.save(authDoctor);
         user1.getAuthorities().add(authUser);
         user1.getAuthorities().add(authAdmin);
         user2.getAuthorities().add(authUser);
-        user3.getAuthorities().add(authUser);
+        user3.getAuthorities().add(authDoctor);
         userRepository.save(user1);
         userRepository.save(user2);
         userRepository.save(user3);

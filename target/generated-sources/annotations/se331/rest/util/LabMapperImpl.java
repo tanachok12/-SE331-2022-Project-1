@@ -21,8 +21,8 @@ import se331.rest.security.entity.UserDTO;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-31T01:10:54+0700",
-    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 18.0.2.1 (Oracle Corporation)"
+    date = "2022-10-31T02:15:58+0700",
+    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 18.0.2 (Amazon.com Inc.)"
 )
 public class LabMapperImpl implements LabMapper {
 
