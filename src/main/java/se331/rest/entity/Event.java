@@ -30,8 +30,13 @@ public class Event {
     String durationTime3;
     String addimg;
     @OneToMany
+
     @Builder.Default
     List<Comment> commentList= new ArrayList<>();
+    @OneToMany
+    @Builder.Default
+    List<Vaccine> vaccineList = new ArrayList<>();
+
 
     @ManyToOne
     Organizer organizer;

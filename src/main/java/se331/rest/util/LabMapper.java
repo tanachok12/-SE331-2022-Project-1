@@ -19,9 +19,11 @@ public interface LabMapper {
     EventDTO getEventDto(Event event);
 
     UserDTO getUserDTO(User user);
+    VaccineDTO getVaccineDto(Vaccine vaccine);
     CommentDTO getCommentDto(Comment comment);
     List<CommentDTO> getCommentDto(List<Comment> comments);
     List<EventDTO> getEventDto(List<Event> events);
+    List<VaccineDTO> getVaccineDto(List<Vaccine> event);
 
     OrganizerDTO getOrganizerDTO(Organizer organizer);
 

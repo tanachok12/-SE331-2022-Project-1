@@ -14,12 +14,14 @@ import se331.rest.entity.OrganizerAuthDTO;
 import se331.rest.entity.OrganizerDTO;
 import se331.rest.entity.OrganizerOwnEventsDTO;
 import se331.rest.entity.Participant;
+import se331.rest.entity.Vaccine;
+import se331.rest.entity.VaccineDTO;
 import se331.rest.security.entity.User;
 import se331.rest.security.entity.UserDTO;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-28T23:47:18+0700",
+    date = "2022-10-31T00:14:29+0700",
     comments = "version: 1.5.2.Final, compiler: javac, environment: Java 18.0.2 (Amazon.com Inc.)"
 )
 public class LabMapperImpl implements LabMapper {
@@ -69,6 +71,20 @@ public class LabMapperImpl implements LabMapper {
     }
 
     @Override
+    public VaccineDTO getVaccineDto(Vaccine vaccine) {
+        if ( vaccine == null ) {
+            return null;
+        }
+
+        VaccineDTO.VaccineDTOBuilder vaccineDTO = VaccineDTO.builder();
+
+        vaccineDTO.id( vaccine.getId() );
+        vaccineDTO.vaccine( vaccine.getVaccine() );
+
+        return vaccineDTO.build();
+    }
+
+    @Override
     public CommentDTO getCommentDto(Comment comment) {
         if ( comment == null ) {
             return null;
@@ -106,6 +122,20 @@ public class LabMapperImpl implements LabMapper {
         List<EventDTO> list = new ArrayList<EventDTO>( events.size() );
         for ( Event event : events ) {
             list.add( getEventDto( event ) );
+        }
+
+        return list;
+    }
+
+    @Override
+    public List<VaccineDTO> getVaccineDto(List<Vaccine> event) {
+        if ( event == null ) {
+            return null;
+        }
+
+        List<VaccineDTO> list = new ArrayList<VaccineDTO>( event.size() );
+        for ( Vaccine vaccine : event ) {
+            list.add( getVaccineDto( vaccine ) );
         }
 
         return list;

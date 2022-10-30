@@ -6,10 +6,14 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import se331.rest.entity.Comment;
 import se331.rest.entity.Event;
 import se331.rest.entity.Organizer;
+import se331.rest.entity.Vaccine;
+import se331.rest.repository.CommentRepository;
 import se331.rest.repository.EventRepository;
 import se331.rest.repository.OrganizerRepository;
+import se331.rest.repository.VaccineRepository;
 import se331.rest.security.entity.Authority;
 import se331.rest.security.entity.AuthorityName;
 import se331.rest.security.entity.User;
@@ -32,9 +36,16 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     AuthorityRepository authorityRepository;
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    CommentRepository commentRepository;
+    @Autowired
+    VaccineRepository vaccineRepository;
     @Override
     @Transactional
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
+        Event tempEvent = null;
+        Comment  comment = null;
+        Vaccine vaccine = null;
         Organizer org1, org2, org3;
         org1 = organizerRepository.save(Organizer.builder()
                 .name("Dr.Nattaparin").build());
@@ -42,7 +53,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .name("Dr.F").build());
         org3 = organizerRepository.save(Organizer.builder()
                 .name("Dr.J").build());
-        Event tempEvent = null;
+
         tempEvent = eventRepository.save(Event.builder()
 
                 .name("Jesada Kampen")
@@ -58,8 +69,16 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
 
                 .organizer(org1)
                 .build());
+        comment = commentRepository.save(Comment.builder()
+                .comment("null")
+                .name("null").build());
+        vaccine = vaccineRepository.save(Vaccine.builder()
+                .vaccine(null)
+                .id(null)
+                .build());
         org1.getOwnEvents().add(tempEvent);
         tempEvent = eventRepository.save(Event.builder()
+
 
                 .name("morty smith")
                 .vaccine1("AstraZeneca")
@@ -75,6 +94,13 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
 
 
                 .organizer(org1)
+                .build());
+        comment = commentRepository.save(Comment.builder()
+                .comment("null")
+                .name("null").build());
+        vaccine = vaccineRepository.save(Vaccine.builder()
+                .vaccine(null)
+                .id(null)
                 .build());
         org1.getOwnEvents().add(tempEvent);
         tempEvent = eventRepository.save(Event.builder()
@@ -93,6 +119,13 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .organizer(org2)
 
                 .build());
+        comment = commentRepository.save(Comment.builder()
+                .comment("null")
+                .name("null").build());
+        vaccine = vaccineRepository.save(Vaccine.builder()
+                .vaccine(null)
+                .id(null)
+                .build());
         org2.getOwnEvents().add(tempEvent);
         tempEvent = eventRepository.save(Event.builder()
 
@@ -106,6 +139,13 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .age("32")
 
                 .organizer(org3)
+                .build());
+        comment = commentRepository.save(Comment.builder()
+                .comment("null")
+                .name("null").build());
+        vaccine = vaccineRepository.save(Vaccine.builder()
+                .vaccine(null)
+                .id(null)
                 .build());
         org3.getOwnEvents().add(tempEvent);
         addUser();
@@ -129,6 +169,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .firstname("admin")
                 .lastname("admin")
                 .email("admin@admin.com")
+
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021,01,01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();
