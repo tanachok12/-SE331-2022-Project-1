@@ -17,5 +17,8 @@ public class Vaccine {
     Long id;
 
     String vaccine;
+    String vaccine2;
+    String vaccine3;
+
 
 }

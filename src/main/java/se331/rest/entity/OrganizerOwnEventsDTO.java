@@ -15,9 +15,7 @@ public class OrganizerOwnEventsDTO {
     Long id;
 
     String name;
-    String vaccine1;
-    String vaccine2;
-    String vaccine3;
+
     String age;
     String durationTime1;
     String durationTime2;

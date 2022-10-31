@@ -10,5 +10,7 @@ import lombok.NoArgsConstructor;
 public class VaccineDTO {
     Long id;
 
-    String vaccine ;
+    String vaccine;
+    String vaccine2;
+    String vaccine3;
 }

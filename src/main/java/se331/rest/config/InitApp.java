@@ -58,9 +58,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         tempEvent = eventRepository.save(Event.builder()
 
                 .name("Jesada Kampen")
-                .vaccine1("Sinovac")
-                .vaccine2("Moderna")
-                .vaccine3("Moderna")
+
                 .durationTime1("3rd january 2564")
                 .durationTime2("6th april 2564")
                 .durationTime3("1st july 2564")
@@ -74,7 +72,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .comment("null")
                 .name("null").build());
         vaccine = vaccineRepository.save(Vaccine.builder()
-                .vaccine(null)
+                .vaccine("Sinonvac")
+                .vaccine2("Astrazeneca")
+                .vaccine3(null)
                 .id(null)
                 .build());
         org1.getOwnEvents().add(tempEvent);
@@ -82,9 +82,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
 
 
                 .name("morty smith")
-                .vaccine1("AstraZeneca")
-                .vaccine2("Moderna")
-                .vaccine3(null)
+
                 .durationTime1("14th april 2564")
                 .durationTime2("3rd November 2564")
                 .durationTime3(null)
@@ -101,16 +99,16 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .name("null").build());
         tempEvent.getCommentList().add(comment);
         vaccine = vaccineRepository.save(Vaccine.builder()
-                .vaccine(null)
+                .vaccine("Astrazeneca")
+                .vaccine2("Moderna")
+                .vaccine3(null)
                 .id(null)
                 .build());
         org1.getOwnEvents().add(tempEvent);
         tempEvent = eventRepository.save(Event.builder()
 
                 .name("Aranya")
-                .vaccine1("Sinovac")
-                .vaccine2(null)
-                .vaccine3(null)
+
                 .durationTime1("6th july 2564")
                 .durationTime2(null)
                 .durationTime3(null)
@@ -126,16 +124,16 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .name("null").build());
         tempEvent.getCommentList().add(comment);
         vaccine = vaccineRepository.save(Vaccine.builder()
-                .vaccine(null)
+                .vaccine("Moderna")
+                .vaccine2("Sinovac")
+                .vaccine3(null)
                 .id(null)
                 .build());
         org2.getOwnEvents().add(tempEvent);
         tempEvent = eventRepository.save(Event.builder()
 
                 .name("Songkran")
-                .vaccine1("Sinovac")
-                .vaccine2("AstraZeneca")
-                .vaccine3(null)
+
                 .addimg("https://media.discordapp.net/attachments/751789885622583347/1035189623925780480/unknown.png?width=554&height=554")
                 .location("Chiang Mai ")
 
@@ -148,7 +146,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .name("null").build());
         tempEvent.getCommentList().add(comment);
         vaccine = vaccineRepository.save(Vaccine.builder()
-                .vaccine(null)
+                .vaccine("Astrazeneca")
+                .vaccine2("Astrazeneca")
+                .vaccine3(null)
                 .id(null)
                 .build());
         org3.getOwnEvents().add(tempEvent);
@@ -195,7 +195,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .firstname("doctor")
                 .lastname("doctor")
                 .email("doctor@user.com")
-                .enabled(false)
+                .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021,01,01)
                         .atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();

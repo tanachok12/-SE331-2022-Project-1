@@ -21,7 +21,7 @@ import se331.rest.security.entity.UserDTO;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-31T02:15:58+0700",
+    date = "2022-10-31T20:13:37+0700",
     comments = "version: 1.5.2.Final, compiler: javac, environment: Java 18.0.2 (Amazon.com Inc.)"
 )
 public class LabMapperImpl implements LabMapper {
@@ -80,6 +80,8 @@ public class LabMapperImpl implements LabMapper {
 
         vaccineDTO.id( vaccine.getId() );
         vaccineDTO.vaccine( vaccine.getVaccine() );
+        vaccineDTO.vaccine2( vaccine.getVaccine2() );
+        vaccineDTO.vaccine3( vaccine.getVaccine3() );
 
         return vaccineDTO.build();
     }
