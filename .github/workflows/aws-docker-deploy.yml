@@ -1,4 +1,4 @@
-ame: Deploy to Aws Docker on merge prod
+name: Deploy to Aws Docker on merge prod
 
 'on':
 
