@@ -17,7 +17,8 @@ public class EventDTO {
     String name;
 
     String location;
-
+String vaccine1;
+String vaccine2;
     String age;
     String durationTime1;
     String durationTime2;
@@ -28,6 +29,7 @@ public class EventDTO {
     EventOrganizerDTO organizer;
     List<String> imageUrls;
     List<CommentDTO> commentList;
+    List<VaccineDTO> vaccineList;
 
 }
 

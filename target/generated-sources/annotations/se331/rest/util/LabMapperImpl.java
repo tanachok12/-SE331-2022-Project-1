@@ -21,8 +21,8 @@ import se331.rest.security.entity.UserDTO;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-31T20:13:37+0700",
-    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 18.0.2 (Amazon.com Inc.)"
+    date = "2022-10-31T22:19:19+0700",
+    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 18.0.2.1 (Oracle Corporation)"
 )
 public class LabMapperImpl implements LabMapper {
 
@@ -39,7 +39,6 @@ public class LabMapperImpl implements LabMapper {
         eventDTO.location( event.getLocation() );
         eventDTO.vaccine1( event.getVaccine1() );
         eventDTO.vaccine2( event.getVaccine2() );
-        eventDTO.vaccine3( event.getVaccine3() );
         eventDTO.age( event.getAge() );
         eventDTO.durationTime1( event.getDurationTime1() );
         eventDTO.durationTime2( event.getDurationTime2() );
@@ -51,6 +50,7 @@ public class LabMapperImpl implements LabMapper {
             eventDTO.imageUrls( new ArrayList<String>( list ) );
         }
         eventDTO.commentList( getCommentDto( event.getCommentList() ) );
+        eventDTO.vaccineList( getVaccineDto( event.getVaccineList() ) );
 
         return eventDTO.build();
     }
@@ -210,9 +210,6 @@ public class LabMapperImpl implements LabMapper {
 
         organizerOwnEventsDTO.id( event.getId() );
         organizerOwnEventsDTO.name( event.getName() );
-        organizerOwnEventsDTO.vaccine1( event.getVaccine1() );
-        organizerOwnEventsDTO.vaccine2( event.getVaccine2() );
-        organizerOwnEventsDTO.vaccine3( event.getVaccine3() );
         organizerOwnEventsDTO.age( event.getAge() );
         organizerOwnEventsDTO.durationTime1( event.getDurationTime1() );
         organizerOwnEventsDTO.durationTime2( event.getDurationTime2() );

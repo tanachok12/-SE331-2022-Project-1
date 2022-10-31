@@ -65,7 +65,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .location("NewYork")
                 .age("20")
                 .addimg("https://media.discordapp.net/attachments/751789885622583347/1035191320605626428/unknown.png?width=554&height=554")
-
+                        .vaccine1("Astrazeneca")
+                        .vaccine2("Sinovac")
                 .organizer(org1)
                 .build());
         comment = commentRepository.save(Comment.builder()
@@ -86,6 +87,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .durationTime1("14th april 2564")
                 .durationTime2("3rd November 2564")
                 .durationTime3(null)
+                .vaccine1("Astrazeneca")
+                .vaccine2("Sinovac")
                 .age("21")
                 .location("Lamphun")
                 .addimg("https://media.discordapp.net/attachments/751789885622583347/1035190593049075732/unknown.png?width=831&height=554")
@@ -115,7 +118,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .age("21")
                 .location("Bankkok")
                 .addimg("https://media.discordapp.net/attachments/751789885622583347/1035190939385340005/unknown.png")
-
+                .vaccine1("Astrazeneca")
+                .vaccine2("Sinovac")
                 .organizer(org2)
 
                 .build());
