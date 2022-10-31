@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import se331.rest.entity.dao.EventDao;
-import se331.rest.entity.dao.OrganizerDao;
+import se331.rest.dao.EventDao;
+import se331.rest.dao.OrganizerDao;
 import se331.rest.entity.Event;
 import se331.rest.entity.Organizer;
 

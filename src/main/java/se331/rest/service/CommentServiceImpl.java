@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import se331.rest.entity.Comment;
-import se331.rest.entity.dao.CommentDao;
+import se331.rest.dao.CommentDao;
 
 import java.util.List;
 @Service

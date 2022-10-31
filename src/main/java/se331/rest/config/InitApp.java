@@ -51,9 +51,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         org1 = organizerRepository.save(Organizer.builder()
                 .name("Admin Vivi ").build());
         org2 = organizerRepository.save(Organizer.builder()
-                .name("Dr.F").build());
+                .name("User").build());
         org3 = organizerRepository.save(Organizer.builder()
-                .name("Dr.J").build());
+                .name("Dr.Jame").build());
 
         tempEvent = eventRepository.save(Event.builder()
 

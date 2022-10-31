@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import se331.rest.entity.Vaccine;
-import se331.rest.entity.dao.VaccineDao;
+import se331.rest.dao.VaccineDao;
 
 import java.util.List;
 @Service
