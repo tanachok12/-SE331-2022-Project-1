@@ -21,7 +21,7 @@ public class VaccineController {
     EventService eventService;
 
     @GetMapping("/vaccine")
-    ResponseEntity<?> getComments() {
+    ResponseEntity<?> getVaccines() {
         return ResponseEntity.ok(LabMapper.INSTANCE.getVaccineDto(vaccineService.getAllVaccine()));
     }
 
