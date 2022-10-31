@@ -46,6 +46,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         Event tempEvent = null;
         Comment  comment = null;
         Vaccine vaccine = null;
+
         Organizer org1, org2, org3;
         org1 = organizerRepository.save(Organizer.builder()
                 .name("Dr.Nattaparin").build());
@@ -98,6 +99,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         comment = commentRepository.save(Comment.builder()
                 .comment("null")
                 .name("null").build());
+        tempEvent.getCommentList().add(comment);
         vaccine = vaccineRepository.save(Vaccine.builder()
                 .vaccine(null)
                 .id(null)
@@ -122,6 +124,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         comment = commentRepository.save(Comment.builder()
                 .comment("null")
                 .name("null").build());
+        tempEvent.getCommentList().add(comment);
         vaccine = vaccineRepository.save(Vaccine.builder()
                 .vaccine(null)
                 .id(null)
@@ -143,6 +146,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         comment = commentRepository.save(Comment.builder()
                 .comment("null")
                 .name("null").build());
+        tempEvent.getCommentList().add(comment);
         vaccine = vaccineRepository.save(Vaccine.builder()
                 .vaccine(null)
                 .id(null)
