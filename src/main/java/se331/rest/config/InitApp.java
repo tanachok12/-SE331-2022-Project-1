@@ -49,7 +49,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
 
         Organizer org1, org2, org3;
         org1 = organizerRepository.save(Organizer.builder()
-                .name("Dr.Nattaparin").build());
+                .name("Admin Vivi ").build());
         org2 = organizerRepository.save(Organizer.builder()
                 .name("Dr.F").build());
         org3 = organizerRepository.save(Organizer.builder()
