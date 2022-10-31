@@ -66,7 +66,7 @@ jobs:
 
           push: true
 
-          tags: tanachok/331-securitylab:latest
+          tags: tanachok/331-project:latest
 
       - name: prepare the docker-compose run
 
