@@ -58,6 +58,10 @@ public class User {
     @NotNull
     private Date lastPasswordResetDate;
 
+
+    @Column(name="IMAGE")
+    String image;
+
 	@Builder.Default
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Authority> authorities = new ArrayList<>();
