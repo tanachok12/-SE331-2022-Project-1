@@ -90,7 +90,7 @@ public class AuthenticationRestController {
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody User user) throws  AuthenticationException{
         PasswordEncoder encoder = new BCryptPasswordEncoder();
-        Authority authAdmin = Authority.builder().name(AuthorityName.ROLE_ADMIN).build();
+        Authority authAdmin = Authority.builder().name(AuthorityName.ROLE_USER).build();
         authorityRepository.save(authAdmin);
         User user2 = User.builder()
                 .enabled(true)
