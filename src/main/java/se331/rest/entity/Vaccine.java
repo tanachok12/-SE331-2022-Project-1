@@ -16,8 +16,7 @@ public class Vaccine {
     @EqualsAndHashCode.Exclude
     Long id;
 
-    String vaccine;
-    String vaccine2;
+
     String vaccine3;
 
 

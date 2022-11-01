@@ -24,9 +24,7 @@ public class Patient {
 String vaccine1;
 String vaccine2;
     String age;
-    String durationTime1;
-    String durationTime2;
-    String durationTime3;
+
     String addimg;
     @OneToMany
 

@@ -19,10 +19,8 @@ public class OrganizerOwnPatientsDTO {
     String vaccine2;
     String vaccine3;
     String age;
-    String durationTime1;
-    String durationTime2;
-    String durationTime3;
-    String description;
+
+
     String location;
     String addimg;
 

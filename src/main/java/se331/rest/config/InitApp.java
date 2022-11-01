@@ -58,10 +58,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         tempPatient = patientRepository.save(Patient.builder()
 
                 .name("Jesada Kampen")
-
-                .durationTime1("3rd january 2564")
-                .durationTime2("6th april 2564")
-                .durationTime3("1st july 2564")
+                .vaccine1("Sinonvac")
+                .vaccine2("Astrazeneca")
                 .location("NewYork")
                 .age("20")
                 .addimg("https://media.discordapp.net/attachments/751789885622583347/1035191320605626428/unknown.png?width=554&height=554")
@@ -72,8 +70,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .comment("null")
                 .name("null").build());
         vaccine = vaccineRepository.save(Vaccine.builder()
-                .vaccine("Sinonvac")
-                .vaccine2("Astrazeneca")
+
                 .vaccine3(null)
                 .id(null)
                 .build());
@@ -82,10 +79,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
 
 
                 .name("morty smith")
-
-                .durationTime1("14th april 2564")
-                .durationTime2("3rd November 2564")
-                .durationTime3(null)
+                .vaccine1("Astrazeneca")
+                .vaccine2("Moderna")
                 .age("21")
                 .location("Lamphun")
                 .addimg("https://media.discordapp.net/attachments/751789885622583347/1035190593049075732/unknown.png?width=831&height=554")
@@ -99,8 +94,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .name("null").build());
         tempPatient.getCommentList().add(comment);
         vaccine = vaccineRepository.save(Vaccine.builder()
-                .vaccine("Astrazeneca")
-                .vaccine2("Moderna")
+
                 .vaccine3(null)
                 .id(null)
                 .build());
@@ -108,10 +102,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         tempPatient = patientRepository.save(Patient.builder()
 
                 .name("Aranya")
+                        .vaccine1("Sinovac")
+                        .vaccine2("Astrazeneca")
 
-                .durationTime1("6th july 2564")
-                .durationTime2(null)
-                .durationTime3(null)
                 .age("21")
                 .location("Bankkok")
                 .addimg("https://media.discordapp.net/attachments/751789885622583347/1035190939385340005/unknown.png")
@@ -124,8 +117,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .name("null").build());
         tempPatient.getCommentList().add(comment);
         vaccine = vaccineRepository.save(Vaccine.builder()
-                .vaccine("Moderna")
-                .vaccine2("Sinovac")
+
                 .vaccine3(null)
                 .id(null)
                 .build());
@@ -133,10 +125,12 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         tempPatient = patientRepository.save(Patient.builder()
 
                 .name("Songkran")
-
+                .vaccine2("Astrazeneca")
+                .vaccine2("Astrazeneca")
                 .addimg("https://media.discordapp.net/attachments/751789885622583347/1035189623925780480/unknown.png?width=554&height=554")
                 .location("Chiang Mai ")
-
+                .vaccine1("Sinovac")
+                .vaccine2("Astrazeneca")
                 .age("32")
 
                 .organizer(org3)
@@ -146,8 +140,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .name("null").build());
         tempPatient.getCommentList().add(comment);
         vaccine = vaccineRepository.save(Vaccine.builder()
-                .vaccine("Astrazeneca")
-                .vaccine2("Astrazeneca")
+
                 .vaccine3(null)
                 .id(null)
                 .build());
