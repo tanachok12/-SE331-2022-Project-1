@@ -7,11 +7,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import se331.rest.entity.Comment;
-import se331.rest.entity.Event;
+import se331.rest.entity.Patient;
 import se331.rest.entity.Organizer;
 import se331.rest.entity.Vaccine;
 import se331.rest.repository.CommentRepository;
-import se331.rest.repository.EventRepository;
+import se331.rest.repository.PatientRepository;
 import se331.rest.repository.OrganizerRepository;
 import se331.rest.repository.VaccineRepository;
 import se331.rest.security.entity.Authority;
@@ -28,7 +28,7 @@ import java.util.Date;
 @Component
 public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     @Autowired
-    EventRepository eventRepository;
+    PatientRepository patientRepository;
 
     @Autowired
     OrganizerRepository organizerRepository;
@@ -43,7 +43,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     @Override
     @Transactional
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
-        Event tempEvent = null;
+        Patient tempPatient = null;
         Comment  comment = null;
         Vaccine vaccine = null;
 
@@ -53,9 +53,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         org2 = organizerRepository.save(Organizer.builder()
                 .name("Dr.F").build());
         org3 = organizerRepository.save(Organizer.builder()
-                .name("Dr.J").build());
+                .name("User").build());
 
-        tempEvent = eventRepository.save(Event.builder()
+        tempPatient = patientRepository.save(Patient.builder()
 
                 .name("Jesada Kampen")
 
@@ -77,8 +77,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .vaccine3(null)
                 .id(null)
                 .build());
-        org1.getOwnEvents().add(tempEvent);
-        tempEvent = eventRepository.save(Event.builder()
+        org1.getOwnPatients().add(tempPatient);
+        tempPatient = patientRepository.save(Patient.builder()
 
 
                 .name("morty smith")
@@ -97,15 +97,15 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         comment = commentRepository.save(Comment.builder()
                 .comment("null")
                 .name("null").build());
-        tempEvent.getCommentList().add(comment);
+        tempPatient.getCommentList().add(comment);
         vaccine = vaccineRepository.save(Vaccine.builder()
                 .vaccine("Astrazeneca")
                 .vaccine2("Moderna")
                 .vaccine3(null)
                 .id(null)
                 .build());
-        org1.getOwnEvents().add(tempEvent);
-        tempEvent = eventRepository.save(Event.builder()
+        org1.getOwnPatients().add(tempPatient);
+        tempPatient = patientRepository.save(Patient.builder()
 
                 .name("Aranya")
 
@@ -122,15 +122,15 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         comment = commentRepository.save(Comment.builder()
                 .comment("null")
                 .name("null").build());
-        tempEvent.getCommentList().add(comment);
+        tempPatient.getCommentList().add(comment);
         vaccine = vaccineRepository.save(Vaccine.builder()
                 .vaccine("Moderna")
                 .vaccine2("Sinovac")
                 .vaccine3(null)
                 .id(null)
                 .build());
-        org2.getOwnEvents().add(tempEvent);
-        tempEvent = eventRepository.save(Event.builder()
+        org2.getOwnPatients().add(tempPatient);
+        tempPatient = patientRepository.save(Patient.builder()
 
                 .name("Songkran")
 
@@ -144,14 +144,14 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         comment = commentRepository.save(Comment.builder()
                 .comment("null")
                 .name("null").build());
-        tempEvent.getCommentList().add(comment);
+        tempPatient.getCommentList().add(comment);
         vaccine = vaccineRepository.save(Vaccine.builder()
                 .vaccine("Astrazeneca")
                 .vaccine2("Astrazeneca")
                 .vaccine3(null)
                 .id(null)
                 .build());
-        org3.getOwnEvents().add(tempEvent);
+        org3.getOwnPatients().add(tempPatient);
         addUser();
         org1.setUser(user1);
         user1.setOrganizer(org1);

@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Event {
+public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Exclude
@@ -21,7 +21,8 @@ public class Event {
     String name;
 
     String location;
-
+String vaccine1;
+String vaccine2;
     String age;
     String durationTime1;
     String durationTime2;
@@ -39,7 +40,7 @@ public class Event {
     @ManyToOne
     Organizer organizer;
 
-    @ManyToMany(mappedBy = "eventHistory")
+    @ManyToMany(mappedBy = "patientHistory")
     List<Participant> participants;
     @ElementCollection
     List<String> imageUrls;

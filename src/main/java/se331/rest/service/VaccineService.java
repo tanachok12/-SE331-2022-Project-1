@@ -1,6 +1,4 @@
 package se331.rest.service;
-import se331.rest.entity.Comment;
-import se331.rest.entity.Event;
 import se331.rest.entity.Vaccine;
 
 import java.util.List;

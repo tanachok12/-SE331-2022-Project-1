@@ -16,13 +16,13 @@ import java.util.stream.Collectors;
 public interface LabMapper {
     LabMapper INSTANCE = Mappers.getMapper(LabMapper.class);
 
-    EventDTO getEventDto(Event event);
+    PatientDTO getPatientDto(Patient patient);
 
     UserDTO getUserDTO(User user);
     VaccineDTO getVaccineDto(Vaccine vaccine);
     CommentDTO getCommentDto(Comment comment);
     List<CommentDTO> getCommentDto(List<Comment> comments);
-    List<EventDTO> getEventDto(List<Event> events);
+    List<PatientDTO> getPatientDto(List<Patient> patients);
     List<VaccineDTO> getVaccineDto(List<Vaccine> vaccine);
 
     OrganizerDTO getOrganizerDTO(Organizer organizer);

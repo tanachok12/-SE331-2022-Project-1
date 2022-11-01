@@ -6,14 +6,14 @@ import java.util.stream.Collectors;
 import javax.annotation.processing.Generated;
 import se331.rest.entity.Comment;
 import se331.rest.entity.CommentDTO;
-import se331.rest.entity.Event;
-import se331.rest.entity.EventDTO;
-import se331.rest.entity.EventOrganizerDTO;
 import se331.rest.entity.Organizer;
 import se331.rest.entity.OrganizerAuthDTO;
 import se331.rest.entity.OrganizerDTO;
-import se331.rest.entity.OrganizerOwnEventsDTO;
+import se331.rest.entity.OrganizerOwnPatientsDTO;
 import se331.rest.entity.Participant;
+import se331.rest.entity.Patient;
+import se331.rest.entity.PatientDTO;
+import se331.rest.entity.PatientOrganizerDTO;
 import se331.rest.entity.Vaccine;
 import se331.rest.entity.VaccineDTO;
 import se331.rest.security.entity.User;
@@ -21,38 +21,37 @@ import se331.rest.security.entity.UserDTO;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-31T20:13:37+0700",
+    date = "2022-11-01T15:32:01+0700",
     comments = "version: 1.5.2.Final, compiler: javac, environment: Java 18.0.2 (Amazon.com Inc.)"
 )
 public class LabMapperImpl implements LabMapper {
 
     @Override
-    public EventDTO getEventDto(Event event) {
-        if ( event == null ) {
+    public PatientDTO getPatientDto(Patient patient) {
+        if ( patient == null ) {
             return null;
         }
 
-        EventDTO.EventDTOBuilder eventDTO = EventDTO.builder();
+        PatientDTO.PatientDTOBuilder patientDTO = PatientDTO.builder();
 
-        eventDTO.id( event.getId() );
-        eventDTO.name( event.getName() );
-        eventDTO.location( event.getLocation() );
-        eventDTO.vaccine1( event.getVaccine1() );
-        eventDTO.vaccine2( event.getVaccine2() );
-        eventDTO.vaccine3( event.getVaccine3() );
-        eventDTO.age( event.getAge() );
-        eventDTO.durationTime1( event.getDurationTime1() );
-        eventDTO.durationTime2( event.getDurationTime2() );
-        eventDTO.durationTime3( event.getDurationTime3() );
-        eventDTO.addimg( event.getAddimg() );
-        eventDTO.organizer( organizerToEventOrganizerDTO( event.getOrganizer() ) );
-        List<String> list = event.getImageUrls();
+        patientDTO.id( patient.getId() );
+        patientDTO.name( patient.getName() );
+        patientDTO.location( patient.getLocation() );
+        patientDTO.vaccine1( patient.getVaccine1() );
+        patientDTO.vaccine2( patient.getVaccine2() );
+        patientDTO.age( patient.getAge() );
+        patientDTO.durationTime1( patient.getDurationTime1() );
+        patientDTO.durationTime2( patient.getDurationTime2() );
+        patientDTO.durationTime3( patient.getDurationTime3() );
+        patientDTO.addimg( patient.getAddimg() );
+        patientDTO.organizer( organizerToPatientOrganizerDTO( patient.getOrganizer() ) );
+        List<String> list = patient.getImageUrls();
         if ( list != null ) {
-            eventDTO.imageUrls( new ArrayList<String>( list ) );
+            patientDTO.imageUrls( new ArrayList<String>( list ) );
         }
-        eventDTO.commentList( getCommentDto( event.getCommentList() ) );
+        patientDTO.commentList( getCommentDto( patient.getCommentList() ) );
 
-        return eventDTO.build();
+        return patientDTO.build();
     }
 
     @Override
@@ -116,14 +115,14 @@ public class LabMapperImpl implements LabMapper {
     }
 
     @Override
-    public List<EventDTO> getEventDto(List<Event> events) {
-        if ( events == null ) {
+    public List<PatientDTO> getPatientDto(List<Patient> patients) {
+        if ( patients == null ) {
             return null;
         }
 
-        List<EventDTO> list = new ArrayList<EventDTO>( events.size() );
-        for ( Event event : events ) {
-            list.add( getEventDto( event ) );
+        List<PatientDTO> list = new ArrayList<PatientDTO>( patients.size() );
+        for ( Patient patient : patients ) {
+            list.add( getPatientDto( patient ) );
         }
 
         return list;
@@ -153,7 +152,7 @@ public class LabMapperImpl implements LabMapper {
 
         organizerDTO.id( organizer.getId() );
         organizerDTO.name( organizer.getName() );
-        organizerDTO.ownEvents( eventListToOrganizerOwnEventsDTOList( organizer.getOwnEvents() ) );
+        organizerDTO.ownPatients( patientListToOrganizerOwnPatientsDTOList( organizer.getOwnPatients() ) );
 
         return organizerDTO.build();
     }
@@ -188,53 +187,52 @@ public class LabMapperImpl implements LabMapper {
         return organizerAuthDTO.build();
     }
 
-    protected EventOrganizerDTO organizerToEventOrganizerDTO(Organizer organizer) {
+    protected PatientOrganizerDTO organizerToPatientOrganizerDTO(Organizer organizer) {
         if ( organizer == null ) {
             return null;
         }
 
-        EventOrganizerDTO.EventOrganizerDTOBuilder eventOrganizerDTO = EventOrganizerDTO.builder();
+        PatientOrganizerDTO.PatientOrganizerDTOBuilder patientOrganizerDTO = PatientOrganizerDTO.builder();
 
-        eventOrganizerDTO.id( organizer.getId() );
-        eventOrganizerDTO.name( organizer.getName() );
+        patientOrganizerDTO.id( organizer.getId() );
+        patientOrganizerDTO.name( organizer.getName() );
 
-        return eventOrganizerDTO.build();
+        return patientOrganizerDTO.build();
     }
 
-    protected OrganizerOwnEventsDTO eventToOrganizerOwnEventsDTO(Event event) {
-        if ( event == null ) {
+    protected OrganizerOwnPatientsDTO patientToOrganizerOwnPatientsDTO(Patient patient) {
+        if ( patient == null ) {
             return null;
         }
 
-        OrganizerOwnEventsDTO.OrganizerOwnEventsDTOBuilder organizerOwnEventsDTO = OrganizerOwnEventsDTO.builder();
+        OrganizerOwnPatientsDTO.OrganizerOwnPatientsDTOBuilder organizerOwnPatientsDTO = OrganizerOwnPatientsDTO.builder();
 
-        organizerOwnEventsDTO.id( event.getId() );
-        organizerOwnEventsDTO.name( event.getName() );
-        organizerOwnEventsDTO.vaccine1( event.getVaccine1() );
-        organizerOwnEventsDTO.vaccine2( event.getVaccine2() );
-        organizerOwnEventsDTO.vaccine3( event.getVaccine3() );
-        organizerOwnEventsDTO.age( event.getAge() );
-        organizerOwnEventsDTO.durationTime1( event.getDurationTime1() );
-        organizerOwnEventsDTO.durationTime2( event.getDurationTime2() );
-        organizerOwnEventsDTO.durationTime3( event.getDurationTime3() );
-        organizerOwnEventsDTO.location( event.getLocation() );
-        organizerOwnEventsDTO.addimg( event.getAddimg() );
-        List<Participant> list = event.getParticipants();
+        organizerOwnPatientsDTO.id( patient.getId() );
+        organizerOwnPatientsDTO.name( patient.getName() );
+        organizerOwnPatientsDTO.vaccine1( patient.getVaccine1() );
+        organizerOwnPatientsDTO.vaccine2( patient.getVaccine2() );
+        organizerOwnPatientsDTO.age( patient.getAge() );
+        organizerOwnPatientsDTO.durationTime1( patient.getDurationTime1() );
+        organizerOwnPatientsDTO.durationTime2( patient.getDurationTime2() );
+        organizerOwnPatientsDTO.durationTime3( patient.getDurationTime3() );
+        organizerOwnPatientsDTO.location( patient.getLocation() );
+        organizerOwnPatientsDTO.addimg( patient.getAddimg() );
+        List<Participant> list = patient.getParticipants();
         if ( list != null ) {
-            organizerOwnEventsDTO.participants( new ArrayList<Participant>( list ) );
+            organizerOwnPatientsDTO.participants( new ArrayList<Participant>( list ) );
         }
 
-        return organizerOwnEventsDTO.build();
+        return organizerOwnPatientsDTO.build();
     }
 
-    protected List<OrganizerOwnEventsDTO> eventListToOrganizerOwnEventsDTOList(List<Event> list) {
+    protected List<OrganizerOwnPatientsDTO> patientListToOrganizerOwnPatientsDTOList(List<Patient> list) {
         if ( list == null ) {
             return null;
         }
 
-        List<OrganizerOwnEventsDTO> list1 = new ArrayList<OrganizerOwnEventsDTO>( list.size() );
-        for ( Event event : list ) {
-            list1.add( eventToOrganizerOwnEventsDTO( event ) );
+        List<OrganizerOwnPatientsDTO> list1 = new ArrayList<OrganizerOwnPatientsDTO>( list.size() );
+        for ( Patient patient : list ) {
+            list1.add( patientToOrganizerOwnPatientsDTO( patient ) );
         }
 
         return list1;
